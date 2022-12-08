@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE scenario SYSTEM "sipp.dtd">
+
+<scenario name="recv-401">
+  
+  <recv request="INVITE" crlf="true">
+  </recv>
+
+  <send>
+    <![CDATA[
+      SIP/2.0 401 Unauthorized
+      [last_Via:]
+      [last_From:]
+      [last_To:];tag=[pid]SIPpTag01[call_number]
+      [last_Call-ID:]
+      [last_CSeq:]
+      WWW-Authenticate: Digest realm="CallManager", nonce="xNPHUPKvwt", algorithm=MD5, qop="auth"
+      User-Agent: RTC CallManager 7.11-68
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <recv request="INVITE" crlf="true">
+  </recv>
+
+  <send>
+    <![CDATA[
+      SIP/2.0 100 Trying
+      [last_Via:]
+      [last_From:]
+      [last_To:];tag=[pid]SIPpTag01[call_number]
+      [last_Call-ID:]
+      [last_CSeq:]
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <send>
+    <![CDATA[
+      SIP/2.0 180 Ringing
+      [last_Via:]
+      [last_From:]
+      [last_To:];tag=[pid]SIPpTag01[call_number]
+      [last_Call-ID:]
+      [last_CSeq:]
+      [last_Contact:]
+      [last_User-Agent:]
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <send>
+    <![CDATA[
+      SIP/2.0 401 Unauthorized
+      [last_Via:]
+      [last_From:]
+      [last_To:];tag=[pid]SIPpTag01[call_number]
+      [last_Call-ID:]
+      [last_CSeq:]
+      WWW-Authenticate: Digest realm="CallManager", nonce="xNPHUPKvwt", algorithm=MD5, qop="auth"
+      User-Agent: RTC CallManager 7.11-68
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <send>
+    <![CDATA[
+      SIP/2.0 401 Unauthorized
+      [last_Via:]
+      [last_From:]
+      [last_To:];tag=[pid]SIPpTag01[call_number]
+      [last_Call-ID:]
+      [last_CSeq:]
+      WWW-Authenticate: Digest realm="CallManager", nonce="xNPHUPKvwt", algorithm=MD5, qop="auth"
+      User-Agent: RTC CallManager 7.11-68
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <send>
+    <![CDATA[
+      SIP/2.0 401 Unauthorized
+      [last_Via:]
+      [last_From:]
+      [last_To:];tag=[pid]SIPpTag01[call_number]
+      [last_Call-ID:]
+      [last_CSeq:]
+      WWW-Authenticate: Digest realm="CallManager", nonce="xNPHUPKvwt", algorithm=MD5, qop="auth"
+      User-Agent: RTC CallManager 7.11-68
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <send>
+    <![CDATA[
+      SIP/2.0 401 Unauthorized
+      [last_Via:]
+      [last_From:]
+      [last_To:];tag=[pid]SIPpTag01[call_number]
+      [last_Call-ID:]
+      [last_CSeq:]
+      WWW-Authenticate: Digest realm="CallManager", nonce="xNPHUPKvwt", algorithm=MD5, qop="auth"
+      User-Agent: RTC CallManager 7.11-68
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <send>
+    <![CDATA[
+      SIP/2.0 401 Unauthorized
+      [last_Via:]
+      [last_From:]
+      [last_To:];tag=[pid]SIPpTag01[call_number]
+      [last_Call-ID:]
+      [last_CSeq:]
+      WWW-Authenticate: Digest realm="CallManager", nonce="xNPHUPKvwt", algorithm=MD5, qop="auth"
+      User-Agent: RTC CallManager 7.11-68
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <send>
+    <![CDATA[
+      SIP/2.0 401 Unauthorized
+      [last_Via:]
+      [last_From:]
+      [last_To:];tag=[pid]SIPpTag01[call_number]
+      [last_Call-ID:]
+      [last_CSeq:]
+      WWW-Authenticate: Digest realm="CallManager", nonce="xNPHUPKvwt", algorithm=MD5, qop="auth"
+      User-Agent: RTC CallManager 7.11-68
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <send>
+    <![CDATA[
+      SIP/2.0 401 Unauthorized
+      [last_Via:]
+      [last_From:]
+      [last_To:];tag=[pid]SIPpTag01[call_number]
+      [last_Call-ID:]
+      [last_CSeq:]
+      WWW-Authenticate: Digest realm="CallManager", nonce="xNPHUPKvwt", algorithm=MD5, qop="auth"
+      User-Agent: RTC CallManager 7.11-68
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <send>
+    <![CDATA[
+      SIP/2.0 401 Unauthorized
+      [last_Via:]
+      [last_From:]
+      [last_To:];tag=[pid]SIPpTag01[call_number]
+      [last_Call-ID:]
+      [last_CSeq:]
+      WWW-Authenticate: Digest realm="CallManager", nonce="xNPHUPKvwt", algorithm=MD5, qop="auth"
+      User-Agent: RTC CallManager 7.11-68
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <send>
+    <![CDATA[
+      SIP/2.0 401 Unauthorized
+      [last_Via:]
+      [last_From:]
+      [last_To:];tag=[pid]SIPpTag01[call_number]
+      [last_Call-ID:]
+      [last_CSeq:]
+      WWW-Authenticate: Digest realm="CallManager", nonce="xNPHUPKvwt", algorithm=MD5, qop="auth"
+      User-Agent: RTC CallManager 7.11-68
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <send>
+    <![CDATA[
+      SIP/2.0 180 Ringing
+      [last_Via:]
+      [last_From:]
+      [last_To:];tag=[pid]SIPpTag01[call_number]
+      [last_Call-ID:]
+      [last_CSeq:]
+      [last_Contact:]
+      [last_User-Agent:]
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <send>
+    <![CDATA[
+      SIP/2.0 401 Unauthorized
+      [last_Via:]
+      [last_From:]
+      [last_To:];tag=[pid]SIPpTag01[call_number]
+      [last_Call-ID:]
+      [last_CSeq:]
+      WWW-Authenticate: Digest realm="CallManager", nonce="xNPHUPKvwt", algorithm=MD5, qop="auth"
+      User-Agent: RTC CallManager 7.11-68
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <send>
+    <![CDATA[
+      SIP/2.0 180 Ringing
+      [last_Via:]
+      [last_From:]
+      [last_To:];tag=[pid]SIPpTag01[call_number]
+      [last_Call-ID:]
+      [last_CSeq:]
+      [last_Contact:]
+      [last_User-Agent:]
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <send>
+    <![CDATA[
+      SIP/2.0 180 Ringing
+      [last_Via:]
+      [last_From:]
+      [last_To:];tag=[pid]SIPpTag01[call_number]
+      [last_Call-ID:]
+      [last_CSeq:]
+      [last_Contact:]
+      [last_User-Agent:]
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <send>
+    <![CDATA[
+      SIP/2.0 200 OK
+      [last_Via:]
+      [last_From:]
+      [last_To:]
+      [last_Call-ID:]
+      [last_CSeq:]
+      Contact: <sip:[service]@[remote_ip]:[remote_port]>
+      Content-Type: application/sdp
+      Allow: INVITE,ACK,CANCEL,BYE,REFER,OPTIONS,MESSAGE,SUBSCRIBE,NOTIFY,PUBLISH,INFO
+      Supported: replaces
+      User-Agent: RTC CallManager 7.11-68
+      X-SID: C310-6QKGOt3TTy35
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <send>
+    <![CDATA[
+      SIP/2.0 200 OK
+      [last_Via:]
+      [last_From:]
+      [last_To:]
+      [last_Call-ID:]
+      [last_CSeq:]
+      Contact: <sip:[service]@[remote_ip]:[remote_port]>
+      Content-Type: application/sdp
+      Allow: INVITE,ACK,CANCEL,BYE,REFER,OPTIONS,MESSAGE,SUBSCRIBE,NOTIFY,PUBLISH,INFO
+      Supported: replaces
+      User-Agent: RTC CallManager 7.11-68
+      X-SID: C310-6QKGOt3TTy35
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <send>
+    <![CDATA[
+      SIP/2.0 200 OK
+      [last_Via:]
+      [last_From:]
+      [last_To:]
+      [last_Call-ID:]
+      [last_CSeq:]
+      Contact: <sip:[service]@[remote_ip]:[remote_port]>
+      Content-Type: application/sdp
+      Allow: INVITE,ACK,CANCEL,BYE,REFER,OPTIONS,MESSAGE,SUBSCRIBE,NOTIFY,PUBLISH,INFO
+      Supported: replaces
+      User-Agent: RTC CallManager 7.11-68
+      X-SID: C310-6QKGOt3TTy35
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <send>
+    <![CDATA[
+      SIP/2.0 200 OK
+      [last_Via:]
+      [last_From:]
+      [last_To:]
+      [last_Call-ID:]
+      [last_CSeq:]
+      Contact: <sip:[service]@[remote_ip]:[remote_port]>
+      Content-Type: application/sdp
+      Allow: INVITE,ACK,CANCEL,BYE,REFER,OPTIONS,MESSAGE,SUBSCRIBE,NOTIFY,PUBLISH,INFO
+      Supported: replaces
+      User-Agent: RTC CallManager 7.11-68
+      X-SID: C310-6QKGOt3TTy35
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <send>
+    <![CDATA[
+      SIP/2.0 200 OK
+      [last_Via:]
+      [last_From:]
+      [last_To:]
+      [last_Call-ID:]
+      [last_CSeq:]
+      Contact: <sip:[service]@[remote_ip]:[remote_port]>
+      Content-Type: application/sdp
+      Allow: INVITE,ACK,CANCEL,BYE,REFER,OPTIONS,MESSAGE,SUBSCRIBE,NOTIFY,PUBLISH,INFO
+      Supported: replaces
+      User-Agent: RTC CallManager 7.11-68
+      X-SID: C310-6QKGOt3TTy35
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <send>
+    <![CDATA[
+      SIP/2.0 200 OK
+      [last_Via:]
+      [last_From:]
+      [last_To:]
+      [last_Call-ID:]
+      [last_CSeq:]
+      Contact: <sip:[service]@[remote_ip]:[remote_port]>
+      Content-Type: application/sdp
+      Allow: INVITE,ACK,CANCEL,BYE,REFER,OPTIONS,MESSAGE,SUBSCRIBE,NOTIFY,PUBLISH,INFO
+      Supported: replaces
+      User-Agent: RTC CallManager 7.11-68
+      X-SID: C310-6QKGOt3TTy35
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <!-- Keep the call open for a while in case the 200 is lost to be     -->
+  <!-- able to retransmit it if we receive the BYE again.               -->
+  <timewait milliseconds="4000"/>
+
+
+  <!-- definition of the response time repartition table (unit is ms)   -->
+  <ResponseTimeRepartition value="10, 20, 30, 40, 50, 100, 150, 200"/>
+
+  <!-- definition of the call length repartition table (unit is ms)     -->
+  <CallLengthRepartition value="10, 50, 100, 500, 1000, 5000, 10000"/>
+
+</scenario>

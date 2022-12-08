@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+   <!DOCTYPE scenario SYSTEM "sipp.dtd">
+   
+   <!-- Эта программа является бесплатным программным обеспечением; вы можете    --> 
+   <!-- распространять его и/или изменять в соответствии с условиями Стандартной -->
+   <!-- общественной лицензии GNU, опубликованной Free Software Foundation;      -->
+   <!-- либо версия 2 Лицензии, либо (на ваш выбор) любая более поздняя версия.  -->
+   <!--                                                                          -->
+   <!-- Эта программа распространяется в надежде, что она будет полезна, но БЕЗ  -->
+   <!-- КАКИХ-ЛИБО ГАРАНТИЙ; даже без подразумеваемой гарантии КОММЕРЧЕСКОЙ      -->
+   <!-- ПРИГОДНОСТИ или ПРИГОДНОСТИ ДЛЯ ОПРЕДЕЛЕННОЙ ЦЕЛИ. Дополнительные        -->
+   <!-- сведения см. в Стандартной общественной лицензии GNU.                    -->
+   <!--                                                                          -->
+   <!-- Вы должны были получить копию Стандартной общественной лицензии GNU      -->
+   <!-- вместе с этой программой; если нет, напишите в Free Software Foundation, -->
+   <!-- Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.             -->
+   <!--                                                                                    -->
+   <!-- Сценарий Sipp по умолчанию 'UAC - User Agent Client - клиент агента пользователя'. -->
+  
+   <scenario name="Basic Sipstone UAC">
+      <!-- В режиме клиента (вызовы через sipp) Call-ID ДОЛЖЕН генерироваться sipp. -->
+      <!-- Для этого используйте ключевое слово [call_id]. -->
+
+      <send retrans="500">
+        <![CDATA[
+  
+          INVITE sip:[service]@[remote_ip]:[remote_port] SIP/2.0
+          Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
+          From: sipp <sip:sipp@[local_ip]:[local_port]>;tag=[call_number]
+          To: sut <sip:[service]@[remote_ip]:[remote_port]>
+          Call-ID: [call_id]
+          CSeq: 1 INVITE
+          Contact: sip:sipp@[local_ip]:[local_port]
+          Max-Forwards: 70
+          Subject: Performance Test
+          Content-Type: application/sdp
+          Content-Length: [len]
+  
+          v=0
+          o=user1 53655765 2353687637 IN IP[local_ip_type] [local_ip]
+          s=-
+          c=IN IP[media_ip_type] [media_ip]
+          t=0 0
+          m=audio [media_port] RTP/AVP 0
+          a=rtpmap:0 PCMU/8000
+
+        ]]>
+      </send>
+  
+      <recv response="100"
+            optional="true">
+      </recv>
+  
+      <recv response="180" optional="true">
+      </recv>
+  
+  <!-- При добавлении rrs="true" (Запись наборов маршрутов) наборы маршрутов -->
+  <!-- сохраняются и используются для последующих отправленных сообщений.    -->
+  <!-- Полезно для тестирования SIP-прокси/B2BUA с отслеживанием состояния.  -->
+  <recv response="200" rtd="true">
+  </recv>
+  
+  <!-- Потеря пакета может быть смоделирована в любом сообщении отправки/получения с помощью -->
+  <!-- добавив 'lost = "10"'. Значение может быть [1-100] процентов. -->
+  <send>
+      <![CDATA[
+  
+        ACK sip:[service]@[remote_ip]:[remote_port] SIP/2.0
+        Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
+        From: sipp <sip:sipp@[local_ip]:[local_port]>;tag=[call_number]
+        To: sut <sip:[service]@[remote_ip]:[remote_port]>[peer_tag_param]
+        Call-ID: [call_id]
+        CSeq: 1 ACK
+        Contact: sip:sipp@[local_ip]:[local_port]
+        Max-Forwards: 70
+        Subject: Performance Test
+        Content-Length: 0
+  
+      ]]>
+  </send>
+  
+  <!-- Эту задержку можно настроить с помощью параметра командной строки -d -->
+  <!-- или добавив здесь параметр 'milliseconds = "value"'/'миллисекунды = "значение"'. -->
+  <pause/>
+  
+  <!-- Опция 'crlf' вставляет пустую строку в отчет статистики. -->
+  <send retrans="500">
+      <![CDATA[
+  
+        BYE sip:[service]@[remote_ip]:[remote_port] SIP/2.0
+        Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
+        From: sipp <sip:sipp@[local_ip]:[local_port]>;tag=[call_number]
+        To: sut <sip:[service]@[remote_ip]:[remote_port]>[peer_tag_param]
+        Call-ID: [call_id]
+        CSeq: 2 BYE
+        Contact: sip:sipp@[local_ip]:[local_port]
+        Max-Forwards: 70
+        Subject: Performance Test
+        Content-Length: 0
+ 
+     ]]>
+ </send>
+ 
+ <recv response="200" crlf="true">
+ </recv>
+ 
+ <!-- определение таблицы перераспределения времени отклика (единица измерения — мс) -->
+ <ResponseTimeRepartition value="10, 20, 30, 40, 50, 100, 150, 200"/>
+ 
+ <!-- определение таблицы перераспределения длительности вызова (единица измерения — мс) -->
+ <CallLengthRepartition value="10, 50, 100, 500, 1000, 5000, 10000"/>
+ 
+ </scenario>

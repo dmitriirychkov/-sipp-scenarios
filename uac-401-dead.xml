@@ -9,9 +9,9 @@
           INVITE sip:[service]@[remote_ip]:[remote_port] SIP/2.0
           Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
           Max-Forwards: 70
-          From: "[field0]" <sip:[field0]@[remote_ip]:[remote_port]>;tag=[pid]SIPpTag00[call_number]
+          From: "friend" <sip:friend@[remote_ip]:[remote_port]>;tag=[pid]SIPpTag00[call_number]
           To: "[service]" <sip:[service]@[remote_ip]:[remote_port]>
-          Contact: sip:[field0]@[local_ip]:[local_port]
+          Contact: sip:friend@[local_ip]:[local_port]
           Call-ID: [call_id]
           CSeq: [cseq] INVITE
           Route: <sip:[remote_ip]:[remote_port];lr>
@@ -25,7 +25,7 @@
     
           v=0
           s=Performance Test Stream [call_number]
-          o=[field0] [$secs_int] [$usecs_int] IN IP[local_ip_type] [local_ip]
+          o=friend [$secs_int] [$usecs_int] IN IP[local_ip_type] [local_ip]
           c=IN IP[media_ip_type] [media_ip]
           t=0 0
           m=audio [media_port] RTP/AVP 0
@@ -36,20 +36,20 @@
         ]]>
     </send>
 
-    <recv response="100" auth="true">
+    <recv response="100" optional="true">
     </recv>
 
     <recv response="401" auth="true">
     </recv>
     
     <!-- Send ACK back -->
-    <send retrans="ACK">
+    <send retrans="500">
         <![CDATA[
     
           ACK sip:[service]@[remote_ip]:[remote_port] SIP/2.0
           Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
           Max-Forwards: 70
-          From: "[field0]" <sip:[field0]@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
+          From: "friend" <sip:friend@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
           To: "[service]" <sip:[service]@[remote_ip]:[remote_port]>[peer_tag_param]
           Call-ID: [call_id]
           CSeq: [cseq] ACK
@@ -65,9 +65,9 @@
           INVITE sip:[service]@[remote_ip]:[remote_port] SIP/2.0
           Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
           Max-Forwards: 70
-          From: "[field0]" <sip:[field0]@[remote_ip]:[remote_port]>;tag=[pid]SIPpTag00[call_number]
+          From: "friend" <sip:friend@[remote_ip]:[remote_port]>;tag=[pid]SIPpTag00[call_number]
           To: "[service]" <sip:[service]@[remote_ip]:[remote_port]>
-          Contact: sip:[field0]@[local_ip]:[local_port]
+          Contact: sip:friend@[local_ip]:[local_port]
           Call-ID: [call_id]
           CSeq: [cseq] INVITE
           Route: <sip:[remote_ip]:[remote_port];lr>
@@ -82,7 +82,7 @@
     
           v=0
           s=Performance Test Stream [call_number]
-          o=[field0] [$secs_int] [$usecs_int] IN IP[local_ip_type] [local_ip]
+          o=friend [$secs_int] [$usecs_int] IN IP[local_ip_type] [local_ip]
           c=IN IP[media_ip_type] [media_ip]
           t=0 0
           m=audio [media_port] RTP/AVP 0
@@ -102,13 +102,13 @@
     <recv response="401" auth="true">
     </recv>
     
-    <send retrans="ACK">
+    <send retrans="500">
         <![CDATA[
     
           ACK sip:[service]@[remote_ip]:[remote_port] SIP/2.0
           Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
           Max-Forwards: 70
-          From: "[field0]" <sip:[field0]@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
+          From: "friend" <sip:friend@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
           To: "[service]" <sip:[service]@[remote_ip]:[remote_port]>[peer_tag_param]
           Call-ID: [call_id]
           CSeq: [cseq] ACK
@@ -121,13 +121,13 @@
     <recv response="401" auth="true">
     </recv>
 
-    <send retrans="ACK">
+    <send retrans="500">
         <![CDATA[
     
           ACK sip:[service]@[remote_ip]:[remote_port] SIP/2.0
           Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
           Max-Forwards: 70
-          From: "[field0]" <sip:[field0]@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
+          From: "friend" <sip:friend@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
           To: "[service]" <sip:[service]@[remote_ip]:[remote_port]>[peer_tag_param]
           Call-ID: [call_id]
           CSeq: [cseq] ACK
@@ -140,13 +140,13 @@
     <recv response="401" auth="true">
     </recv>
 
-    <send retrans="ACK">
+    <send retrans="500">
         <![CDATA[
     
           ACK sip:[service]@[remote_ip]:[remote_port] SIP/2.0
           Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
           Max-Forwards: 70
-          From: "[field0]" <sip:[field0]@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
+          From: "friend" <sip:friend@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
           To: "[service]" <sip:[service]@[remote_ip]:[remote_port]>[peer_tag_param]
           Call-ID: [call_id]
           CSeq: [cseq] ACK
@@ -159,13 +159,13 @@
     <recv response="401" auth="true">
     </recv>
 
-    <send retrans="ACK">
+    <send retrans="500">
         <![CDATA[
     
           ACK sip:[service]@[remote_ip]:[remote_port] SIP/2.0
           Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
           Max-Forwards: 70
-          From: "[field0]" <sip:[field0]@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
+          From: "friend" <sip:friend@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
           To: "[service]" <sip:[service]@[remote_ip]:[remote_port]>[peer_tag_param]
           Call-ID: [call_id]
           CSeq: [cseq] ACK
@@ -177,18 +177,35 @@
 
     <pause milliseconds="5000"/>
 
-    <send retrans="CANCEL">
+    <send retrans="500">
         <![CDATA[
     
           CANCEL sip:[service]@[remote_ip]:[remote_port] SIP/2.0 
           Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
           Max-Forwards: 70
-          From: "[field0]" <sip:[field0]@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
+          From: "friend" <sip:friend@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
           To: "[service]" <sip:[service]@[remote_ip]:[remote_port]>
           Call-ID: [call_id]
           CSeq: [cseq] CANCEL
           Route: <sip:95.167.42.121:5062;lr>
           User-Agent: MicroSIP/3.20.5
+          Content-Length: 0
+    
+        ]]>
+    </send>
+
+    <!-- Send goodBYE -->
+    <send retrans="500">
+        <![CDATA[
+    
+          BYE sip:[service]@[remote_ip]:[remote_port] SIP/2.0
+          Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
+          Max-Forwards: 70
+          From: "friend" <sip:friend@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
+          To: <sip:[service]@[remote_ip]:[remote_port]>[peer_tag_param]
+          Call-ID: [call_id]
+          CSeq: [cseq] BYE
+          Max-Forwards: 70
           Content-Length: 0
     
         ]]>
@@ -199,7 +216,5 @@
     
     <!-- definition of the call length repartition table (unit is ms)     -->
     <CallLengthRepartition value="10, 50, 100, 500, 1000, 5000, 10000"/>
-    
-    <Reference variables="dummy">
 
 </scenario>

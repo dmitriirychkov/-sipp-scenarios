@@ -339,6 +339,25 @@
     ]]>
   </send>
 
+  <send retrans="500">
+        <![CDATA[
+    
+          BYE sip:[service]@[remote_ip]:[remote_port] SIP/2.0
+          Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
+          From: "friend" <sip:friend@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
+          To: <sip:[service]@[remote_ip]:[remote_port]>[peer_tag_param]
+          Call-ID: [call_id]
+          CSeq: [cseq] BYE
+          Max-Forwards: 70
+          User-Agent: RTC CallManager 7.11-68
+          Content-Length: 0
+    
+        ]]>
+    </send>
+
+  <recv request="481" crlf="true">
+  </recv>
+
   <!-- Keep the call open for a while in case the 200 is lost to be     -->
   <!-- able to retransmit it if we receive the BYE again.               -->
   <timewait milliseconds="4000"/>
